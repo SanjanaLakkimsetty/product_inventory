@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Product_Inventory.Models.Product>
+
+<h1>Product List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Details", "Product", new { id = product.Id })">
+                        @product.Name
+                    </a>
+                </td>
+                <td>@product.Price</td>
+                <td>@product.StockQuantity</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Product", new { id = product.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Product", new { id = product.Id })">Delete</a> |
+                    <!-- Details Link -->
+                    <a href="@Url.Action("Details", "Product", new { id = product.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Product")">Add New Product</a>

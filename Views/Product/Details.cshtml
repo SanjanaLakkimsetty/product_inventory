@@ -1,0 +1,19 @@
+﻿@model Product_Inventory.Models.Product
+
+<h1>Product Details</h1>
+
+<div>
+    <h3>@Model.Name</h3>
+    <dl class="row">
+        <dt class="col-sm-2">Price</dt>
+        <dd class="col-sm-10">@Model.Price</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Stock Quantity</dt>
+        <dd class="col-sm-10">@Model.StockQuantity</dd>
+    </dl>
+</div>
+
+<a href="@Url.Action("Index", "Product")" class="btn btn-secondary">Back to Product List</a>
